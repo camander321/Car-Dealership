@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cars</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  </head>
+  <body>
+    <div class="container">
+      <h1>All the cars</h1>
+      @foreach (var car in Model)
+      {
+        <p>@car.MakeModel</p>
+        <p>@car.Year</p>
+        <p>@car.Color</p>
+        <p>@car.GetPrice()</p>
+      }
+      <p><a href="/">Return home</a></p>
+    </div>
+
+  </body>
+</html>

@@ -9,18 +9,18 @@ namespace CarDealership.Models
     public string MakeModel;
     public string Year;
     public string Color;
-    public int Mileage;
+    public string Mileage;
     private int _price;
-    private bool _isNew;
+    //private bool _isNew;
 
-    public Car(string makeModel, string year, string color, int mileage, int price, bool isNew)
+    public Car(string makeModel, string year, string color, string mileage, int price)
     {
       MakeModel = makeModel;
       Year = year;
       Color = color;
       Mileage = mileage;
       _price = price;
-      _isNew = isNew;
+      //_isNew = isNew;
     }
 
     public int GetPrice()
@@ -33,19 +33,24 @@ namespace CarDealership.Models
       _price = price;
     }
 
-    public bool CheckIsNew()
-    {
-      return _isNew;
-    }
-
-    public void SetIsNew(bool isNew)
-    {
-      _isNew = isNew;
-    }
+    // public bool CheckIsNew()
+    // {
+    //   return _isNew;
+    // }
+    //
+    // public void SetIsNew(bool isNew)
+    // {
+    //   _isNew = isNew;
+    // }
 
     public void Save()
     {
      _instances.Add(this);
+    }
+
+    public static List<Car> GetAllCars()
+    {
+      return _instances;
     }
 
 
